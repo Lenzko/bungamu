@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bunga Pink 3D</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Luxury Pink Blossom</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -13,85 +17,105 @@
 }
 
 body{
-    overflow:hidden;
     height:100vh;
+    overflow:hidden;
     display:flex;
     justify-content:center;
     align-items:center;
     background:
     radial-gradient(circle at top,
-    #ffd1e6,
-    #ff76aa 45%,
-    #ff2f75 100%);
+    #ffe0ec 0%,
+    #ff7eb3 45%,
+    #ff3d81 100%);
+    font-family:'Poppins',sans-serif;
 }
 
-/* cahaya */
-.glow{
+/* background blur */
+.bg-glow{
     position:absolute;
-    width:500px;
-    height:500px;
-    background:radial-gradient(circle,
-    rgba(255,255,255,.5),
+    width:900px;
+    height:900px;
+    border-radius:50%;
+    background:
+    radial-gradient(circle,
+    rgba(255,255,255,.45),
     transparent 70%);
-    filter:blur(40px);
-    animation:pulse 4s infinite alternate;
+    filter:blur(70px);
+    animation:pulse 6s infinite alternate;
 }
 
 @keyframes pulse{
     from{
         transform:scale(1);
+        opacity:.7;
     }
+
     to{
         transform:scale(1.15);
+        opacity:1;
     }
+}
+
+/* container */
+.container{
+    position:relative;
+    width:100%;
+    max-width:500px;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 }
 
 /* bunga */
 .flower{
     position:relative;
-    width:320px;
-    height:320px;
-    animation:float 5s ease-in-out infinite;
+    width:340px;
+    height:340px;
+
+    animation:floatFlower 5s ease-in-out infinite;
 }
 
-@keyframes float{
+@keyframes floatFlower{
     0%,100%{
-        transform:translateY(0);
+        transform:translateY(0px);
     }
+
     50%{
         transform:translateY(-15px);
     }
 }
 
-/* kelopak */
+/* petals */
 .petal{
     position:absolute;
+
     width:130px;
-    height:180px;
-
-    background:
-    radial-gradient(circle at 30% 30%,
-    #fff5fa,
-    #ffb3d2 30%,
-    #ff5c98 70%,
-    #ff2f75 100%);
-
-    border-radius:70% 70% 60% 60%;
+    height:190px;
 
     left:50%;
     top:50%;
 
     margin-left:-65px;
-    margin-top:-150px;
+    margin-top:-155px;
 
-    transform-origin:center 150px;
+    border-radius:70% 70% 60% 60%;
+
+    background:
+    radial-gradient(circle at 30% 30%,
+    #fff7fb,
+    #ffc2da 28%,
+    #ff6ba6 65%,
+    #ff2f75 100%);
+
+    transform-origin:center 155px;
 
     box-shadow:
-    inset -8px -12px 20px rgba(255,255,255,.5),
-    inset 10px 10px 20px rgba(255,0,90,.35),
-    0 0 25px rgba(255,90,150,.7);
-
-    filter:drop-shadow(0 0 15px rgba(255,120,180,.8));
+    inset -10px -15px 20px rgba(255,255,255,.55),
+    inset 10px 10px 18px rgba(255,0,90,.25),
+    0 0 25px rgba(255,80,140,.55);
 
     animation:bloom 2s ease forwards;
     opacity:0;
@@ -113,82 +137,140 @@ body{
     }
 }
 
-/* tengah bunga */
+/* center */
 .center{
     position:absolute;
-    width:90px;
-    height:90px;
+
+    width:95px;
+    height:95px;
+
     background:
     radial-gradient(circle,
-    #fff8c7,
-    #ffd54d 50%,
+    #fff7c7,
+    #ffd64d 45%,
     #ffb300 100%);
+
     border-radius:50%;
+
     left:50%;
     top:50%;
+
     transform:translate(-50%,-50%);
 
     box-shadow:
-    0 0 25px rgba(255,220,120,.9),
-    inset 0 0 15px rgba(255,255,255,.8);
+    0 0 30px rgba(255,220,120,.9),
+    inset 0 0 18px rgba(255,255,255,.8);
 }
 
-/* batang */
+/* stem */
 .stem{
     position:absolute;
+
     width:18px;
-    height:280px;
-    background:linear-gradient(to bottom,
-    #5cff95,
-    #168f49);
+    height:260px;
 
-    bottom:-250px;
+    background:
+    linear-gradient(to bottom,
+    #6dff9f,
+    #17964f);
+
     left:50%;
-    transform:translateX(-50%);
-    border-radius:20px;
+    top:60%;
 
-    box-shadow:0 0 15px rgba(0,255,100,.4);
+    transform:translateX(-50%);
+
+    border-radius:30px;
+
+    box-shadow:
+    0 0 15px rgba(0,255,100,.35);
 }
 
-/* daun */
+/* leaves */
 .leaf{
     position:absolute;
-    width:90px;
-    height:45px;
 
-    background:linear-gradient(to right,
-    #6dff9f,
-    #1ea856);
+    width:95px;
+    height:48px;
+
+    background:
+    linear-gradient(to right,
+    #7effab,
+    #1da857);
 
     border-radius:100px 0;
 
-    bottom:80px;
+    box-shadow:
+    0 0 10px rgba(0,255,100,.2);
 }
 
 .leaf.left{
-    left:40px;
+    left:65px;
+    top:245px;
     transform:rotate(-35deg);
 }
 
 .leaf.right{
-    right:40px;
+    right:65px;
+    top:245px;
     transform:scaleX(-1) rotate(-35deg);
 }
 
-/* partikel */
-.spark{
-    position:absolute;
-    width:8px;
-    height:8px;
-    background:white;
-    border-radius:50%;
-    box-shadow:0 0 10px white;
-    animation:spark 6s linear infinite;
+/* title */
+.title{
+    margin-top:40px;
+
+    color:white;
+
+    font-size:34px;
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-shadow:
+    0 0 12px rgba(255,255,255,.8),
+    0 0 30px rgba(255,120,180,.8);
 }
 
-@keyframes spark{
+/* subtitle */
+.subtitle{
+    margin-top:10px;
+
+    color:white;
+
+    font-size:16px;
+    font-weight:300;
+
+    opacity:.9;
+
+    text-align:center;
+    padding:0 30px;
+
+    line-height:1.6;
+}
+
+/* particles */
+.spark{
+    position:absolute;
+
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:0 0 10px white;
+
+    animation:particle 7s linear infinite;
+}
+
+@keyframes particle{
+
     from{
-        transform:translateY(100vh) scale(.2);
+        transform:
+        translateY(100vh)
+        scale(.2);
+
         opacity:0;
     }
 
@@ -197,81 +279,103 @@ body{
     }
 
     to{
-        transform:translateY(-120vh) scale(1);
+        transform:
+        translateY(-120vh)
+        scale(1);
+
         opacity:0;
     }
-}
-
-/* teks */
-.text{
-    position:absolute;
-    bottom:40px;
-    width:100%;
-    text-align:center;
-
-    color:white;
-    font-size:24px;
-    font-weight:bold;
-
-    text-shadow:
-    0 0 10px rgba(255,255,255,.8),
-    0 0 20px rgba(255,120,180,.8);
 }
 
 /* mobile */
 @media(max-width:480px){
 
     .flower{
-        transform:scale(.8);
+        width:280px;
+        height:280px;
     }
 
-    .text{
-        font-size:18px;
-        bottom:20px;
+    .petal{
+        width:110px;
+        height:160px;
+
+        margin-left:-55px;
+        margin-top:-135px;
+
+        transform-origin:center 135px;
+    }
+
+    .center{
+        width:80px;
+        height:80px;
+    }
+
+    .stem{
+        height:220px;
+    }
+
+    .leaf{
+        width:80px;
+        height:40px;
+    }
+
+    .title{
+        font-size:28px;
+    }
+
+    .subtitle{
+        font-size:14px;
     }
 }
+
 </style>
 </head>
 
 <body>
 
-<div class="glow"></div>
+<div class="bg-glow"></div>
 
-<div class="flower">
+<div class="container">
 
-    <!-- kelopak -->
-    <div class="petal" style="--r:0deg;"></div>
-    <div class="petal" style="--r:45deg;"></div>
-    <div class="petal" style="--r:90deg;"></div>
-    <div class="petal" style="--r:135deg;"></div>
-    <div class="petal" style="--r:180deg;"></div>
-    <div class="petal" style="--r:225deg;"></div>
-    <div class="petal" style="--r:270deg;"></div>
-    <div class="petal" style="--r:315deg;"></div>
+    <div class="flower">
 
-    <!-- tengah -->
-    <div class="center"></div>
+        <div class="petal" style="--r:0deg;"></div>
+        <div class="petal" style="--r:45deg;"></div>
+        <div class="petal" style="--r:90deg;"></div>
+        <div class="petal" style="--r:135deg;"></div>
+        <div class="petal" style="--r:180deg;"></div>
+        <div class="petal" style="--r:225deg;"></div>
+        <div class="petal" style="--r:270deg;"></div>
+        <div class="petal" style="--r:315deg;"></div>
 
-    <!-- batang -->
-    <div class="stem"></div>
+        <div class="center"></div>
 
-    <!-- daun -->
-    <div class="leaf left"></div>
-    <div class="leaf right"></div>
+        <div class="stem"></div>
+
+        <div class="leaf left"></div>
+        <div class="leaf right"></div>
+
+    </div>
+
+    <div class="title">
+        Pink Blossom
+    </div>
+
+    <div class="subtitle">
+        A luxury ultra-realistic blooming flower
+        designed for modern mobile web experiences.
+    </div>
 
 </div>
 
-<div class="text">
-🌸 Pink Flower Bloom 🌸
-</div>
-
-<!-- sparkle -->
+<!-- particles -->
 <div class="spark" style="left:10%; animation-delay:0s;"></div>
-<div class="spark" style="left:25%; animation-delay:2s;"></div>
-<div class="spark" style="left:40%; animation-delay:4s;"></div>
-<div class="spark" style="left:55%; animation-delay:1s;"></div>
-<div class="spark" style="left:70%; animation-delay:5s;"></div>
-<div class="spark" style="left:85%; animation-delay:3s;"></div>
+<div class="spark" style="left:20%; animation-delay:2s;"></div>
+<div class="spark" style="left:35%; animation-delay:4s;"></div>
+<div class="spark" style="left:50%; animation-delay:1s;"></div>
+<div class="spark" style="left:65%; animation-delay:5s;"></div>
+<div class="spark" style="left:80%; animation-delay:3s;"></div>
+<div class="spark" style="left:90%; animation-delay:6s;"></div>
 
 </body>
 </html>
